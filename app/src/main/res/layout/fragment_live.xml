@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 顶部信息栏 -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cat_card_single_spacing"
+        android:background="#88000000"
+        android:padding="@dimen/cat_card_single_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_image_view"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_marginEnd="@dimen/dp_5"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/icon_image_view"
+            android:text="直播间标题"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_text_view"
+            android:layout_toEndOf="@id/icon_image_view"
+            android:text="副标题"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_toEndOf="@id/title_text_view"
+            android:backgroundTint="@color/purple_500"
+            android:padding="@dimen/dp_5"
+            android:text="关注"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10" />
+
+    </RelativeLayout>
+
+    <!-- 底部功能栏 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 弹幕区 -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/comment_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_150">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="消息：123456" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="消息：123456" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/comment_scroll_view"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/cat_card_single_spacing">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="发送评论"
+                android:text="" />
+
+            <!-- 礼物 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginStart="@dimen/dp_5"
+                app:srcCompat="@mipmap/ic_launcher_round"/>
+
+            <!-- 更多功能 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginStart="@dimen/dp_5"
+                app:srcCompat="@mipmap/ic_launcher_round"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
